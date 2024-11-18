@@ -20,7 +20,7 @@ function ShellContent({ routePrefix }) {
     );
 }
 
-function ShellEntry({ routePrefix = '' }) {
+function ShellEntry({ routePrefix = 'app' }) {
 
     return (
         <ShellContent routePrefix={routePrefix} />
