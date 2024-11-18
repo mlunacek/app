@@ -9,10 +9,10 @@ import Box from '@mui/material/Box'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-function NavBarTop({ routePrefix = "" }) {
+function NavBarTop({ routePrefix = "app" }) {
 
     const location = useLocation();
-
+    console.log("routePrefix", routePrefix)
     console.log(location.pathname)
 
     return (
@@ -24,9 +24,8 @@ function NavBarTop({ routePrefix = "" }) {
                         <Toolbar variant="dense">
                             <Tabs value={location.pathname} aria-label="tabs nav">
 
-                                <Tab color="inherit" value={"/"} variant="text" component={Link} to={'/'} label="Home" />
-                                <Tab color="inherit" value={"/about"} variant="text" component={Link} to={'/about'} label="About" />
-
+                                <Tab color="inherit" value={`/${routePrefix}/`} variant="text" component={Link} to={`/${routePrefix}/`} label="Home" />
+                                <Tab color="inherit" value={`/${routePrefix}/about`} variant="text" component={Link} to={`/${routePrefix}/about`} label="About" />
 
                             </Tabs>
                         </Toolbar>
